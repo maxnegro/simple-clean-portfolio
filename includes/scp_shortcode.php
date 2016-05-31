@@ -9,8 +9,14 @@ function scp_list_shortcode($atts) {
 
   $args = array(
     'post_type' => 'sc_portfolio',
-    'showposts' => 10
+    'showposts' => 10,
+    'orderby' => 'title',
+    'order' => 'ASC'
   );
+  if (is_array($atts) && array_key_exists('category', $atts)) {
+    // Filtra gli articoli per categoria
+    $args['scp_category'] = $atts['category'];
+  }
   $_query = new WP_Query($args);
 
   $html .= '<section class="main clearfix">' . "\n";
