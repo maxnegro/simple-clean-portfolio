@@ -36,7 +36,7 @@ function simple_clean_portfolio_post_type() {
     'label' => __('Portfolio', 'simple_clean_portfolio'),
     'description' => __('Portfolio Type', 'simple_clean_portfolio'),
     'labels' => $labels,
-    'supports' => array('title', 'editor','thumbnail'),
+    'supports' => array('title', 'editor','thumbnail', 'page-attributes'),
     // 'supports'            => array( 'title', 'editor', 'custom-fields', ),
     'taxonomies' => array('scp_category'),
     // 'taxonomies'          => array( 'category', 'post_tag' ),

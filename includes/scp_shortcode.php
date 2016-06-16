@@ -10,7 +10,7 @@ function scp_list_shortcode($atts) {
   $args = array(
     'post_type' => 'sc_portfolio',
     'showposts' => 10,
-    'orderby' => 'title',
+    'orderby' => 'menu_order',
     'order' => 'ASC'
   );
   if (is_array($atts) && array_key_exists('category', $atts)) {
