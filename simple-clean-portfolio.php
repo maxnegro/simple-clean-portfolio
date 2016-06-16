@@ -87,7 +87,7 @@ add_action('init', 'simple_clean_portfolio_post_type', 0);
 
 function add_scp_columns($columns) {
   return array_merge($columns,
-  array('scp_category' => 'Categoria')
+  array('scp_category' => 'Categoria', 'menu_order' => 'Ordinamento')
 );
 }
 add_filter('manage_sc_portfolio_posts_columns', 'add_scp_columns');
@@ -95,13 +95,16 @@ add_filter('manage_sc_portfolio_posts_columns', 'add_scp_columns');
 function custom_sc_portfolio_column($column, $post_id) {
   switch ($column) {
     case 'scp_category':
-    $terms = get_the_term_list( $post_id, 'scp_category', '', ',', '');
-    if (is_string($terms)) {
-      echo $terms;
-    } else {
-      echo "--";
-    }
-    break;
+      $terms = get_the_term_list( $post_id, 'scp_category', '', ',', '');
+      if (is_string($terms)) {
+        echo $terms;
+      } else {
+        echo "--";
+      }
+      break;
+    case 'menu_order':
+      echo get_post_field( 'menu_order', $post_id);
+      break;
   }
   return;
 }
