@@ -119,7 +119,7 @@ function restrict_listings_by_category() {
             'taxonomy'        =>  $taxonomy,
             'name'            =>  'scp_category',
             'orderby'         =>  'name',
-            'selected'        =>  $wp_query->query['scp_category'],
+            'selected'        =>  array_key_exists('scp_category', $wp_query->query) ? $wp_query->query['scp_category'] : '',
             'hierarchical'    =>  true,
             'depth'           =>  3,
             'show_count'      =>  true, // Show # listings in parens
