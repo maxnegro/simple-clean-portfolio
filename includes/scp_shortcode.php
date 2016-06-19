@@ -28,7 +28,7 @@ function scp_list_shortcode($atts) {
     $html .= sprintf('<img src="%s" class="media" alt=""/>', $thumbnail_data[0]);
     $html .= '<div class="caption">';
     $html .= '<div class="work_title">';
-    $html .= sprintf('<h1>%s</h1>', get_the_title());
+    $html .= sprintf('<h3 class="work_title">%s</h3>', get_the_title());
     //         <p>Descrizione lunga dell'oggetto,</p>
     $html .= '</div>';
     $html .= '</div>';
